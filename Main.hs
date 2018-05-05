@@ -4,8 +4,16 @@ main = print 1
 -- constant
 constant :: t1 -> t -> t1
 constant x y = x
--- I - identity
+
+-- identity (I-combinator)
+identity :: t -> t
+identity x = x
+
 -- apply
+
 -- K - compose
--- S - siski
+-- type declaration
+compose f g x = f(g(x))
+
+-- S - sasai
 -- +
