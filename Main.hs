@@ -12,9 +12,16 @@ identity x = x
 -- apply
 apply :: (t -> t1) -> t -> t1
 apply f x = f x
+
 -- K - compose
 -- type declaration
+compose :: (t2 -> t1) -> (t3 -> t2) -> t3 -> t1
 compose f g x = f(g(x))
 
+-- reverted constant (?)
+myFunc :: t1 -> t -> t
+myFunc f x = x
+
 -- S - sasai
+-- flip
 -- +
