@@ -3,8 +3,9 @@
 
 
 -- one*
-
-
+one :: (t1 -> t) -> t1 -> t
+--one f x = f x
+one = ($)
 
 -- two*
 
