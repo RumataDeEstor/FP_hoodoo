@@ -17,10 +17,6 @@ apply f x = f x
 compose :: (t2 -> t1) -> (t3 -> t2) -> t3 -> t1
 compose f g x = f(g(x))
 
--- reverted constant (?)
-myFunc :: t1 -> t -> t
-myFunc f x = x
-
 -- S - sasai
 sasai :: (x -> g -> f) -> (x -> g) -> x -> f
 sasai f g x = f x (g x)
