@@ -15,13 +15,10 @@ two :: (t -> t) -> t -> t
 --two f x = f (f x)
 two = sasai compose identity 
 
---inc*
---inc :: (t1 -> t -> t) -> (t -> t1) -> t -> t1
---inc :: (f -> x -> n) -> (n -> f) -> x -> f
-
---inc :: ((t1 -> t2) -> t3 -> t1) -> (t1 -> t2) -> t3 -> t2
---inc :: (t -> t) -> (t -> t) -> t
-inc n f x = f (n f x)
+-- inc*
+inc :: ((t1 -> t2) -> t3 -> t1) -> (t1 -> t2) -> t3 -> t2
+--inc n f x = f (n f x)
+inc = sasai compose
 
 -- dec
 
