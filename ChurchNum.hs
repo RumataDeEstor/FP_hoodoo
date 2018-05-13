@@ -24,7 +24,7 @@ inc = sasai compose
 
 -- add
 add :: (t1 -> t2 -> t3) -> (t1 -> t -> t2) -> t1 -> t -> t3
---add n k f x = n f (k f x)
+add n k f x = n f (k f x)
 
 -- sub
 
@@ -34,7 +34,8 @@ add :: (t1 -> t2 -> t3) -> (t1 -> t -> t2) -> t1 -> t -> t3
 
 
 -- church
-
+church 0 f x = zero f x
+church n f x = f (church (n - 1) f x)
 
 
 -- unchurch*
