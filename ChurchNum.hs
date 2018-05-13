@@ -1,3 +1,5 @@
+module ChurchNum where
+
 import Base (flip', constant, apply, compose, sasai, identity)
 
 -- zero*
