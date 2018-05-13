@@ -34,6 +34,7 @@ add n k f x = n f (k f x)
 
 
 -- church
+church :: (Num n, Eq n) => n -> (f -> f) -> f -> f
 church 0 f x = zero f x
 church n f x = f (church (n - 1) f x)
 
