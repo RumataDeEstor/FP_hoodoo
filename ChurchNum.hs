@@ -30,22 +30,20 @@ add n k f x = n f (k f x)
 
 
 -- mul*
-
-
+mul :: (t2 -> t3) -> (t1 -> t2) -> t1 -> t3
+--mul n k f = n (k f)
+mul = compose
 
 -- church
 church :: (Num n, Eq n) => n -> (f -> f) -> f -> f
 church 0 f x = zero f x
 church n f x = f (church (n - 1) f x)
 
-
 -- unchurch*
-
+unchurch n = n (+1) 0
 
 
 -- isZero
-
-
 
 
 
