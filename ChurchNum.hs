@@ -45,8 +45,12 @@ church n f x = f (church (n - 1) f x)
 unchurch n = n (+1) 0
 
 
--- isZero
+false a b = b
+true a b = a
 
+-- isZero 
+isZero :: ((t1 -> (t2 -> t3 -> t3)) -> (t5 -> t4 -> t5) -> t) -> t
+isZero n = n (constant false) true
 
 
 -- * write the fuction in the point-free form 
