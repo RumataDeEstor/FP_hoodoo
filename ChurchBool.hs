@@ -17,8 +17,9 @@ cond :: t -> t
 cond = identity
 
 -- and
-
-
+and' :: (t1 -> (t3 -> t2 -> t2) -> t) -> t1 -> t
+-- and' a b = cond a (cond b true false) false   
+and' a b = a b false
 -- or
 
 
