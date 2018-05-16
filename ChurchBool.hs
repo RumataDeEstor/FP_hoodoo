@@ -1,4 +1,4 @@
-import Base (constant)
+import Base (constant, identity)
 import ChurchNum (zero)
 
 -- true
@@ -12,7 +12,9 @@ false :: t1 -> t -> t
 false = zero
 
 -- cond (if)
-cond x a b = x a b
+cond :: t -> t
+--cond f a b = f a b
+cond = identity
 
 -- and
 
