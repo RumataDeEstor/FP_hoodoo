@@ -27,6 +27,8 @@ or' :: ((t1 -> t -> t1) -> t2 -> t3) -> t2 -> t3
 or' a b = a true b
 -- not
 
+not' :: ((t -> t1 -> t1) -> (t2 -> t3 -> t2) -> t4) -> t4
+not' a = a false true
 
 -- xor
 
