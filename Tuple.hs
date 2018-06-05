@@ -1,5 +1,6 @@
 -- tuple
-
+tuple :: t -> t1 -> (t -> t1 -> t2) -> t2
+tuple a b f = f a b
 
 -- first*
 
