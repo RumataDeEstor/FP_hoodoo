@@ -16,8 +16,8 @@ second :: ((t1 -> t -> t) -> t2) -> t2
 second = flip' apply zero
 
 -- swap
-
-
+-- swap t = tuple (second t) (first t) 
+swap t = t (flip' tuple)
 
 -- curry*
 
