@@ -1,5 +1,5 @@
 import Base (constant, identity)
-import ChurchNum (zero)
+import ChurchNum (zero, one)
 
 -- true
 true :: t1 -> t -> t1
@@ -31,14 +31,9 @@ not' :: ((t -> t1 -> t1) -> (t2 -> t3 -> t2) -> t4) -> t4
 not' a = a false true
 
 -- xor
---xor
--- :: (t1 -> ((t2 -> t3 -> t3) -> (t4 -> t5 -> t4) -> t1) -> t)
--- -> ((t2 -> t3 -> t3) -> (t4 -> t5 -> t4) -> t1) -> t
-
---xor a b = cond a (cond b false true) (cond b true false)
-xor a b = a (b false true) (cond b true false)
+xor a b = a (b false true) (b true false)
 
 -- toChurchNum
-
-
+toChurchNum :: (((t1 -> t) -> t1 -> t) -> (t3 -> t2 -> t2) -> t4) -> t4
+toChurchNum f = f one zero
 
