@@ -1,5 +1,6 @@
 import Base (constant, identity)
 import ChurchNum (zero, one)
+import Tuple (tuple, uncurry')
 
 -- true
 true :: t1 -> t -> t1

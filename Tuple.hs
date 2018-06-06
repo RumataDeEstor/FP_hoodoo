@@ -1,3 +1,5 @@
+module Tuple where
+
 import Base (constant, apply, flip')
 import ChurchNum (zero)
 
@@ -19,11 +21,12 @@ second = flip' apply zero
 -- swap t = tuple (second t) (first t) 
 swap t = t (flip' tuple)
 
--- curry*
+-- curry'*
 
 
 
--- uncurry
-
+-- uncurry'
+uncurry' :: a -> (a -> a1) -> a1
+uncurry' f t = t f
 
 -- * write the function in the point-free form
