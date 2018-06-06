@@ -22,6 +22,8 @@ second = flip' apply zero
 swap t = t (flip' tuple)
 
 -- curry'*
+-- curry' :: (t1 -> t) -> t2 -> t3 -> t
+curry' f a b = f (tuple a b)
 
 
 
