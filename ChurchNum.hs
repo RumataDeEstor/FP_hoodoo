@@ -42,8 +42,9 @@ church 0 f x = zero f x
 church n f x = f (church (n - 1) f x)
 
 -- unchurch*
+unchurch :: (Num t2, Num t1) => ((t2 -> t2) -> t1 -> t) -> t
 unchurch n = n (+1) 0
-
+-- unchurch = flip ($ (1 +)) 0
 
 false a b = b
 true a b = a
