@@ -1,6 +1,6 @@
 module Tuple where
 
-import Base (constant, apply, flip')
+import Base (constant, apply, flip', compose)
 import ChurchNum (zero)
 
 -- tuple
@@ -22,10 +22,8 @@ second = flip' apply zero
 swap t = t (flip' tuple)
 
 -- curry'*
--- curry' :: (t1 -> t) -> t2 -> t3 -> t
+curry' :: (((t1 -> t2 -> t3) -> t3) -> t) -> t1 -> t2 -> t
 curry' f a b = f (tuple a b)
-
-
 
 -- uncurry'
 uncurry' :: a -> (a -> a1) -> a1
