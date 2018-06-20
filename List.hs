@@ -19,3 +19,7 @@ foldr (Cons h t) f x = f h (foldr t f x)
 foldl :: List a -> (a -> a -> a) -> a -> a
 foldl Empty _ x = x 
 foldl (Cons h t) f x = foldl t f (f x h)
+
+-- Prepend
+prepend :: List a -> a -> List a
+prepend (Cons h t) x = Cons x (Cons h t)
