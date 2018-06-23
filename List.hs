@@ -2,7 +2,7 @@
 
 module List where
 
-import Prelude (Show, Integer, (+), Num)
+import Prelude (Show, Integer, (+), Num, (*))
 
 -- list type definition
 data List a
@@ -31,3 +31,7 @@ append (Cons h t) x = foldr' (Cons h t) Cons (Cons x Empty)
 -- Sum
 sum :: (Num a) => List a -> a
 sum (Cons h t) = foldr' (Cons h t) (+) 0
+
+-- Product 
+product :: (Num a) => List a -> a
+product (Cons h t) = foldr' (Cons h t) (*) 1
