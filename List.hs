@@ -39,3 +39,7 @@ product (Cons h t) = foldr' (Cons h t) (*) 1
 -- Length
 length :: List a -> Int
 length (Cons h t) = foldl' (Cons h t) (\x h -> x + 1) 0
+
+-- Reverse
+reverse :: List a -> List a
+reverse (Cons h t) = foldl' t prepend (Cons h Empty)
