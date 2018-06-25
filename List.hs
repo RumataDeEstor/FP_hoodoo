@@ -2,7 +2,8 @@
 
 module List where
 
-import Prelude (Show, Integer, (+), Num, (*), Int)
+import Prelude (Show, Integer, (+), Num, (*), Int, (>), Bool(True, False), (==))
+import ChurchBool (true, false, cond)
 
 -- list type definition
 data List a
@@ -47,3 +48,7 @@ reverse (Cons h t) = foldl' t prepend (Cons h Empty)
 -- Map
 map :: List a -> (a -> b) -> List b
 map (Cons h t) f = foldr' (Cons h t) (\h1 t1 -> Cons (f h1) t1) Empty
+
+-- Filter
+filter :: List a -> (a -> (List a -> List a -> List a)) -> List a
+filter (Cons h t) f = foldr' (Cons h t) (\h1 t1 -> ((f h1) (Cons h1 t1) t1)) Empty

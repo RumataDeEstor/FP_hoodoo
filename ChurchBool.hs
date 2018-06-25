@@ -1,3 +1,5 @@
+module ChurchBool where
+
 import Base (constant, identity)
 import ChurchNum (zero, one)
 import Tuple (tuple, uncurry', curry', first)
