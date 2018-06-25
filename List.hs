@@ -43,3 +43,7 @@ length (Cons h t) = foldl' (Cons h t) (\x h -> x + 1) 0
 -- Reverse
 reverse :: List a -> List a
 reverse (Cons h t) = foldl' t prepend (Cons h Empty)
+
+-- Map
+map :: List a -> (a -> b) -> List b
+map (Cons h t) f = foldr' (Cons h t) (\h1 t1 -> Cons (f h1) t1) Empty
