@@ -2,7 +2,7 @@
 
 module List where
 
-import Prelude (Show, Integer, (+), Num, (*), Int, (>), Bool(True, False), (==), (-))
+import Prelude (Show, Integer, (+), Num, (*), Int, (>), Bool(True, False), (==), (-), otherwise)
 import ChurchBool (true, false, cond)
 
 -- list type definition
@@ -57,3 +57,8 @@ filter (Cons h t) f = foldr' (Cons h t) (\h1 t1 -> ((f h1) (Cons h1 t1) t1)) Emp
 zeroTo :: Int -> List Int
 zeroTo 0 = Cons 0 Empty
 zeroTo a = append (zeroTo (a - 1)) a
+
+range :: Int -> Int -> List Int
+range a b 
+  | a == b = Cons b Empty
+  | otherwise = append (range a (b-1)) b
