@@ -58,7 +58,13 @@ zeroTo :: Int -> List Int
 zeroTo 0 = Cons 0 Empty
 zeroTo a = append (zeroTo (a - 1)) a
 
+-- Range
 range :: Int -> Int -> List Int
 range a b 
   | a == b = Cons b Empty
   | otherwise = append (range a (b-1)) b
+
+-- Repeat
+repeat :: Int -> t1 -> List t1
+repeat 1 b = Cons b Empty
+repeat a b = append (repeat (a - 1) b) b
